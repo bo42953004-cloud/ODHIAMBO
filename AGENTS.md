@@ -34,6 +34,10 @@ glowing cyan/indigo accents, animated nav tabs, bot-market cards).
   `src/styles/index.scss`.
 - `brian-the-trader/src/pages/main/main.scss` — nav tab bar restyle (per-tab accent
   colours via `--tab-color`, glowing frame + bottom beam).
+- Reference artwork lives in `brian-the-trader/src/assets/` (e.g. `digittools-hero.jpg`)
+  and must be referenced with a RELATIVE url from SCSS (`url("../assets/...")`):
+  root-absolute URLs like `url("/foo.jpg")` are not resolved by Rsbuild's css-loader
+  and break the dev build.
 - `brian-the-trader/src/pages/free-bots/index.tsx` + `free-bots.scss` — Free Bots
   cards rebuilt as the reference `.bot-market-card` (tier badge, card number, art
   ring, meta grid, feature tags, load button). Accent colour comes from each bot's
