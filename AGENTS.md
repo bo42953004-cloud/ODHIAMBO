@@ -25,3 +25,16 @@ Logs: `docker compose -f docker-compose.base44.yml logs -f web`
 ## Verification
 - `curl http://localhost:3000/` returns 200 with the app HTML
 - `curl http://localhost:3000/src/main.tsx` returns 200 (confirms dev server, not prebuilt)
+
+## UI theme (reference "DigitTools" redesign)
+The app UI was restyled to match a supplied reference design (deep-navy `#020829`,
+glowing cyan/indigo accents, animated nav tabs, bot-market cards).
+- `brian-the-trader/src/styles/reference-theme.scss` — reference palette, global
+  theme-variable overrides, header, scrollbar and shared keyframes. Imported from
+  `src/styles/index.scss`.
+- `brian-the-trader/src/pages/main/main.scss` — nav tab bar restyle (per-tab accent
+  colours via `--tab-color`, glowing frame + bottom beam).
+- `brian-the-trader/src/pages/free-bots/index.tsx` + `free-bots.scss` — Free Bots
+  cards rebuilt as the reference `.bot-market-card` (tier badge, card number, art
+  ring, meta grid, feature tags, load button). Accent colour comes from each bot's
+  `color` field via `--bot-color`.
